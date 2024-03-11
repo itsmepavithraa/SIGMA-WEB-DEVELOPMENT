@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variable</title>
+    <style>
+        :root{
+            --color: blue;/* global declaration(can use anywhere in the webpage) */
+            --seccolor: skyblue;
+            --border-color: yellow;
+            --defpad: 50px;
+            --defop: 0.9;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            /* background-color: palevioletred; */
+            background-color: var(--color);
+            padding: var(--defpad); /*Variable also holds other such values like default padding etc..*/
+        }
+        .container{
+            /* background-color: rgb(227, 179, 195); */
+            background-color: var(--seccolor);
+        }
+        ul{
+            display: flex;
+        }
+        ul li{
+            opacity: var(--defop);
+            list-style: none;
+            padding: 34px;
+            border: 3px solid var(--border-color);
+        }
+        ul li:first-child{
+             /*--color: orange;  local declaration(used only inside the paranthesis) */
+            background-color: var(--color,  purple); /* optional color (purple if the --color is not defined) */
+
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+
+
+    <div class="container">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe, quas quis distinctio eaque consequuntur voluptas amet voluptatem facilis ipsam illo nostrum rem repellendus a iure nobis labore nesciunt ratione inventore laborum consectetur culpa! Maxime a ut ad omnis et veniam blanditiis necessitatibus perferendis illo iusto?
+    </div>
+</body>
+</html>
